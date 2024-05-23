@@ -1,4 +1,3 @@
-// scripts.js
 document.addEventListener("DOMContentLoaded", () => {
     const video = document.querySelector("#video");
     const playPauseBtn = document.querySelector("#playPauseBtn");
@@ -28,4 +27,28 @@ document.addEventListener("DOMContentLoaded", () => {
             muteIcon.alt = "Unmute";
         }
     });
+
+    // Intersection Observer per reproduir el vídeo automàticament
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    };
+
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                video.play();
+                playPauseIcon.src = "icons/pause.png";
+                playPauseIcon.alt = "Pause";
+            } else {
+                video.pause();
+                playPauseIcon.src = "icons/play.png";
+                playPauseIcon.alt = "Play";
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    observer.observe(video);
 });
