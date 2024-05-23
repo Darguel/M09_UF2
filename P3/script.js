@@ -52,3 +52,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver(observerCallback, observerOptions);
     observer.observe(video);
 });
+
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("navbar").style.padding = "30px 10px";
+    document.getElementById("navbar").style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+    document.getElementById("navbar").style.transition = "0.5s";
+  } else {
+    document.getElementById("navbar").style.padding = "80px 10px";
+    document.getElementById("navbar").style.backgroundColor = "rgba(0, 0, 0, 0)";
+    document.getElementById("navbar").style.transition = "0.5s";
+  }
+}
+
+window.addEventListener('scroll', function() {
+    var icon = document.getElementById('icon-container');
+    var scrollPosition = window.pageYOffset;
+
+    // Rotación y cambio de tamaño hacia abajo
+    if (scrollPosition > 0) {
+        icon.style.transform = 'rotate(180deg) scale(1.5)';
+    } else {
+        // Rotación y cambio de tamaño hacia arriba
+        icon.style.transform = 'rotate(0deg) scale(1)';
+    }
+});

@@ -3,16 +3,17 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant els coberts</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/png" href="img/fabiconRestaurante.png">
 </head>
 
 <body>
-    <nav>
+    <nav id="navbar">
         <ul class="nav">
-            <li><a href="#">Nosaltres</a></li>
+            <li><a class="active" href="#">Nosaltres</a></li>
             <li><a href="#">Carta</a></li>
             <li><a href="#">Galeria</a></li>
         </ul>
@@ -123,6 +124,28 @@
                 </li>
             </ul>
         </section>
+        <section id="galeria" style="display: flex; align-items: center; flex-direction: column; margin-bottom: 20px;">
+            <h2>VIDEO DEL RESTAURANTE</h2>
+            <div class="video-container">
+                <video id="video" width="80%" muted>
+                    <source src="src/carlota.mp4" type="video/mp4">
+                    <source src="src/carlota.ogg" type="video/ogg">
+                    <source src="src/carlota.webm" type="video/webm">
+                </video>
+                <div class="controls">
+                    <button id="playPauseBtn">
+                        <img id="playPauseIcon" src="icons/play.png" alt="Play">
+                    </button>
+                    <button id="muteBtn">
+                        <img id="muteIcon" src="icons/mute.png" alt="Mute">
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <div id="icon-container">
+            <i id="my-icon" class="material-icons">favorite</i>
+        </div>
 
         <footer>
             <div class="peu1">
@@ -132,6 +155,7 @@
             <div class="peu2">Restaurant Els coberts</div>
         </footer>
     </main>
+    <script src="script.js"></script>
 </body>
 
 </html>
